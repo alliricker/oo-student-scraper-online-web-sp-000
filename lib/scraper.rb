@@ -39,8 +39,4 @@ class Scraper
 return_hash
 end
 
-
-
-
-
 end
