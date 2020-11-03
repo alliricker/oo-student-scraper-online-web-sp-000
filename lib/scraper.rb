@@ -3,6 +3,8 @@ require 'open-uri'
 require 'pry'
 
 html = open(https://learn-co-curriculum.github.io/student-scraper-test-page/index.html)
+Nokogiri::HTML(html)
+doc = Nokogiri::HTML(html)
 
 class Scraper
 
