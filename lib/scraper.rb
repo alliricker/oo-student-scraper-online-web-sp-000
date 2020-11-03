@@ -22,7 +22,7 @@ doc = Nokogiri::HTML(html)
 return_hash = {}
 
   social = doc.css(".vitals-container .social-icon-container a")
-  social.each do |element| 
+  social.each do |element|
     if element.attr('href').include?("twitter")
       return_hash[:twitter] = element.attr('href')
     elsif element.attr('href').include?("linkedin")
