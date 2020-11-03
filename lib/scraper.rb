@@ -18,12 +18,11 @@ class Scraper
 
   def self.scrape_profile_page(profile_url)
     html = open(profile_url)
-  doc = Nokogiri::HTML(html)
-  return_hash = {}
+    doc = Nokogiri::HTML(html)
+    return_hash = {}
 
-    social = doc.css(".vitals-container .social-icon-container a")
-    social.each do |element| #iterate through each of the social elements and assign the keys if the item exists
-      if element.attr('href').include?("twitter")
+    profile = doc.css(".vitals-container .social-icon-container a")
+    profile.each do |element| 
         return_hash[:twitter] = element.attr('href')
       elsif element.attr('href').include?("linkedin")
         return_hash[:linkedin] = element.attr('href')
